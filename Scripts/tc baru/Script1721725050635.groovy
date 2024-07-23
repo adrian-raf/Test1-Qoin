@@ -17,19 +17,3 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequestAndVerify(findTestObject('REST API/Reqres API/Get User'))
-
-response1 = WS.sendRequest(findTestObject('REST API/Reqres API/Get Single User'))
-
-def result = new groovy.json.JsonSlurper().parseText(response1.getResponseBodyContent())
-
-def value = result.data.email
-
-println('..value extracted is ' + value)
-
-//GlobalVariable.userEmail =value
-//println('..Global variable is' + GlobalVariable.userEmail )
-WS.sendRequestAndVerify(findTestObject('REST API/Reqres API/Update data user', [('email') : value]))
-
-println('value = ' + value)
-

@@ -16,7 +16,7 @@
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://reqres.in/api/users/2</restUrl>
+   <restUrl>${GlobalVariable.baseURL}/api/users/2</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -39,8 +39,11 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+//WS.verifyResponseStatusCode(response, 200)
 
+assertThat(response.getStatusCode()).isEqualTo(200)
 
-WS.verifyElementPropertyValue(response, 'data.first_name', &quot;Janet&quot;)</verificationScript>
+//WS.verifyElementPropertyValue(response, 'data.email', &quot;jamet&quot;)
+WS.verifyElementPropertyValue(response, 'data.email', &quot;janet.weaver@reqres.in&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

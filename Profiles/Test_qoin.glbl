@@ -6,7 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'email'</initValue>
+      <initValue>'adri@gmail.co'</initValue>
       <name>userEmail</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

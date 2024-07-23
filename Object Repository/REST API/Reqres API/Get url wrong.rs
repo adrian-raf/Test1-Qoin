@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Get User</name>
+   <name>Get url wrong</name>
    <tag></tag>
-   <elementGuidId>5b59467d-4245-438f-b690-609b8bf02991</elementGuidId>
+   <elementGuidId>df934a51-6429-4fb2-b133-71e05098da90</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <autoUpdateContent>true</autoUpdateContent>
@@ -16,7 +16,7 @@
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>${GlobalVariable.baseURL}/api/users?page=2</restUrl>
+   <restUrl>https://reqres.in/saddadsadsa</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -39,9 +39,9 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-//WS.verifyElementPropertyValue(response, 'data[1].last_name', 'Bears')
-//WS.verifyResponseStatusCode(response, 404)
 
-WS.verifyElementPropertyValue(response, 'data[2].first_name', &quot;Tobias&quot;)</verificationScript>
+WS.verifyResponseStatusCode(response, 404)
+
+assertThat(response.getStatusCode()).isEqualTo(404)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
